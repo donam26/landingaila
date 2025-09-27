@@ -327,7 +327,7 @@ function loadBackgroundImage() {
     img.onload = function() {
         document.querySelector('.background-overlay').style.backgroundImage = `url('${this.src}')`;
     };
-    img.src = 'ai-background.png';
+    img.src = 'backgrnew.png';
 }
 
 // Load background image after page load

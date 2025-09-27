@@ -22,7 +22,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('backgr.png') center/cover no-repeat;
+    background: url('backgrnew.png') center/cover no-repeat;
     z-index: -2;
 }
 
@@ -54,7 +54,7 @@ body {
 /* Header Section */
 .header {
     text-align: center;
-    padding: 80px 0 60px;
+    padding: 40px 0 30px;
     position: relative;
 }
 
@@ -97,7 +97,7 @@ body {
 
 /* Main Content - Poster Section */
 .main-content {
-    padding: 40px 0;
+    padding: 20px 0;
     display: flex;
     justify-content: center;
 }
@@ -254,59 +254,127 @@ body {
 /* CTA Section */
 .cta-section {
     text-align: center;
-    padding: 60px 0 80px;
+    padding: 30px 0 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .cta-content {
     position: relative;
 }
 
+/* --- CTA Button - Ancient Compass --- */
 .cta-button {
-    background: linear-gradient(45deg, #FFD700, #FFA500);
-    border: none;
-    padding: 20px 40px;
-    border-radius: 50px;
-    font-size: 1.3rem;
-    font-weight: 600;
-    color: #8B4513;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
-    display: inline-flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 20px;
     position: relative;
-    overflow: hidden;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle at center, #222 0%, #000 70%);
+    border: 2px solid #444;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: 'Lora', serif;
+    font-size: 1.3em;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    z-index: 10;
+    outline: none;
+    transition: all 0.4s ease-in-out;
+    box-shadow:
+        0 0 10px rgba(0, 0, 0, 0.8),
+        inset 0 0 15px rgba(0, 0, 0, 0.9);
 }
 
-.cta-button::before {
-    content: '';
+.cta-text {
+    position: relative;
+    z-index: 10;
+    color: #ffd700;
+    text-shadow:
+        0 0 5px rgba(255, 217, 0, 0.7),
+        0 0 10px rgba(255, 165, 0, 0.5);
+    transition: all 0.4s ease;
+    line-height: 1.2;
+}
+
+.cta-blade {
     position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-    transition: left 0.5s ease;
+    top: 50%;
+    left: 50%;
+    width: 95%;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, #ffd700, transparent);
+    box-shadow: 0 0 8px #ffd700;
+    transform: translate(-50%, -50%);
+    transform-origin: center;
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+    z-index: 1;
 }
 
-.cta-button:hover::before {
-    left: 100%;
+.cta-blade:nth-child(1) {
+    animation: rotate1 8s linear infinite;
+}
+
+.cta-blade:nth-child(2) {
+    animation: rotate2 12s linear infinite reverse;
+}
+
+.cta-blade:nth-child(3) {
+    animation: rotate3 15s linear infinite;
 }
 
 .cta-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 15px 40px rgba(255, 215, 0, 0.4);
+    background: radial-gradient(circle at center, #333 0%, #111 70%);
+    border-color: #ffd700;
+    box-shadow:
+        0 0 20px rgba(255, 217, 0, 0.5),
+        inset 0 0 20px rgba(0, 0, 0, 1);
 }
 
-.cta-arrow {
-    font-size: 1.5rem;
-    transition: transform 0.3s ease;
+.cta-button:hover .cta-text {
+    transform: scale(1.1);
+    color: #fff;
+    text-shadow:
+        0 0 8px #fff,
+        0 0 15px #ffd700;
 }
 
-.cta-button:hover .cta-arrow {
-    transform: translateX(5px);
+.cta-button:hover .cta-blade {
+    animation-play-state: paused;
+    background: linear-gradient(90deg, transparent, #fff, transparent);
+    box-shadow: 0 0 12px #fff;
+}
+
+.cta-button:hover .cta-blade:nth-child(1) {
+    transform: translate(-50%, -50%) rotate(90deg) scaleX(1.1);
+}
+.cta-button:hover .cta-blade:nth-child(2) {
+    transform: translate(-50%, -50%) rotate(0deg) scaleX(1.1);
+}
+.cta-button:hover .cta-blade:nth-child(3) {
+    transform: translate(-50%, -50%) rotate(45deg) scaleX(0.8);
+}
+
+
+@keyframes rotate1 {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes rotate2 {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes rotate3 {
+    from { transform: translate(-50%, -50%) rotate(0deg); }
+    to { transform: translate(-50%, -50%) rotate(360deg); }
 }
 
 .cta-subtitle {
@@ -414,7 +482,7 @@ body {
 
 /* Gallery Section */
 .gallery-section {
-    padding: 60px 0;
+    padding: 20px 0;
     text-align: center;
 }
 
