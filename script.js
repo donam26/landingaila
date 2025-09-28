@@ -17,6 +17,18 @@ const posters = [
         title: 'Di sản văn hóa',
         description: 'Bảo tồn và phát triển',
         alt: 'Cultural Heritage Preservation Poster'
+    },
+    {
+        src: 'poster4.png',
+        title: 'Di sản văn hóa',
+        description: 'Bảo tồn và phát triển',
+        alt: 'Cultural Heritage Preservation Poster'
+    },
+    {
+        src: 'poster5.png',
+        title: 'Di sản văn hóa',
+        description: 'Bảo tồn và phát triển',
+        alt: 'Cultural Heritage Preservation Poster'
     }
 ];
 
@@ -140,7 +152,7 @@ function startAutoSlide() {
     clearInterval(autoSlideInterval);
     autoSlideInterval = setInterval(() => {
         changePoster(1);
-    }, 6000);
+    }, 3000);
 }
 
 function addEventListeners() {
@@ -203,7 +215,7 @@ function addEventListeners() {
 function initializeParticles() {
     const particles = document.querySelectorAll('.particle');
 
-    particles.forEach((particle, index) => {
+    particles.forEach(particle => {
         // Randomize particle properties
         const size = Math.random() * 4 + 2;
         const animationDuration = Math.random() * 4 + 6;
