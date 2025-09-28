@@ -18,18 +18,6 @@ const posters = [
         description: 'Bảo tồn và phát triển',
         alt: 'Cultural Heritage Preservation Poster'
     },
-    {
-        src: 'poster4.png',
-        title: 'Di sản văn hóa',
-        description: 'Bảo tồn và phát triển',
-        alt: 'Cultural Heritage Preservation Poster'
-    },
-    {
-        src: 'poster5.png',
-        title: 'Di sản văn hóa',
-        description: 'Bảo tồn và phát triển',
-        alt: 'Cultural Heritage Preservation Poster'
-    }
 ];
 
 let currentPosterIndex = 0;
