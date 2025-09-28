@@ -2,14 +2,14 @@
 const posters = [
     {
         src: 'poster1.png',
-        title: 'Văn hóa Ải La',
-        description: 'Truyền thống ngàn năm',
+        title: 'Lịch sử ngàn năm',
+        description: 'Huyền thoại anh hùng',
         alt: 'Traditional Ải Lao Festival Poster'
     },
     {
         src: 'poster2.png',
-        title: 'Lễ hội Gióng',
-        description: 'Huyền thoại anh hùng',
+        title: 'Nguồn gốc Ải Lao',
+        description: 'Truyền thống ngàn năm',
         alt: 'Gióng Festival Hero Legend Poster'
     },
     {
@@ -40,6 +40,29 @@ document.addEventListener('DOMContentLoaded', function() {
     initializePage();
     startAutoSlide();
     addEventListeners();
+    setupScrollAnimations();
+    initializeLightbox();
+
+    const posterImg = document.getElementById('current-poster');
+    posterImg.addEventListener('error', () => {
+        // Create a placeholder if image fails to load
+        posterImg.style.display = 'none';
+        const placeholder = document.createElement('div');
+        placeholder.style.cssText = `
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #8B4513, #A0522D);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #FFD700;
+            font-size: 1.2rem;
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+        `;
+        placeholder.innerHTML = 'Ải Lao<br>Festival';
+        posterImg.parentNode.appendChild(placeholder);
+    });
 });
 
 function initializePage() {
@@ -294,30 +317,7 @@ document.addEventListener('mousemove', (e) => {
     });
 });
 
-// Error handling for missing images
-document.addEventListener('DOMContentLoaded', () => {
-    const posterImg = document.getElementById('current-poster');
 
-    posterImg.addEventListener('error', () => {
-        // Create a placeholder if image fails to load
-        posterImg.style.display = 'none';
-        const placeholder = document.createElement('div');
-        placeholder.style.cssText = `
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(45deg, #8B4513, #A0522D);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #FFD700;
-            font-size: 1.2rem;
-            text-align: center;
-            font-family: 'Playfair Display', serif;
-        `;
-        placeholder.innerHTML = 'Ải Lao<br>Festival';
-        posterImg.parentNode.appendChild(placeholder);
-    });
-});
 
 // Smooth scrolling for any internal links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -347,10 +347,10 @@ window.addEventListener('load', loadBackgroundImage);
 
 
 // Scroll animations for info sections
-function handleScrollAnimations() {
+function setupScrollAnimations() {
     const sections = document.querySelectorAll('.info-section, .gallery-section');
 
-    const observer = new IntersectionObserver((entries) => {
+    const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.style.opacity = '1';
@@ -367,9 +367,6 @@ function handleScrollAnimations() {
         observer.observe(section);
     });
 }
-
-// Add scroll event listener
-window.addEventListener('scroll', handleScrollAnimations);
 
 // Lightbox functionality
 function initializeLightbox() {
@@ -398,5 +395,3 @@ function initializeLightbox() {
     }
 }
 
-// Initialize lightbox on DOMContentLoaded
-document.addEventListener('DOMContentLoaded', initializeLightbox);

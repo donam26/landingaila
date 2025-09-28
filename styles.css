@@ -115,6 +115,8 @@ body {
 .poster-container {
     position: relative;
     width: 100%;
+    max-width: 700px;
+    margin: 0 auto;
 }
 
 .poster-frame {
@@ -142,7 +144,7 @@ body {
 
 .poster-display {
     position: relative;
-    aspect-ratio: 3/4;
+    aspect-ratio: 4/3;
     border-radius: 15px;
     overflow: hidden;
     background: #2c2c2c;
@@ -497,8 +499,9 @@ body {
 }
 
 .gallery-title {
-    font-family: 'Montserrat', sans-serif; /* New font for the gallery title */
-    font-weight: 700;
+    font-family: 'DFVN TAN - KINDRED', serif;
+    font-weight: normal; /* Max weight for high contrast */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5); /* Crisper shadow */
 }
 
 .gallery-grid {
@@ -620,13 +623,13 @@ body {
     .header { padding: 60px 0 40px; }
     .main-title { font-size: 2.5rem; }
     .subtitle { font-size: 1rem; }
-    .poster-container { max-width: 350px; }
+    .poster-container { max-width: 100%; }
     .cta-button { padding: 15px 30px; font-size: 1.1rem; }
 }
 
 @media (max-width: 480px) {
     .main-title { font-size: 2rem; }
-    .poster-container { max-width: 300px; }
+    .poster-container { max-width: 100%; }
     .poster-frame { padding: 15px; }
     .cta-button { padding: 12px 25px; font-size: 1rem; }
 }
