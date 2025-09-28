@@ -18,6 +18,12 @@ const posters = [
         description: 'Bảo tồn và phát triển',
         alt: 'Cultural Heritage Preservation Poster'
     },
+    {
+        src: 'poster4.png',
+        title: 'Lễ rước thánh trong ánh nắng',
+        description: 'Bảo tồn và phát triển',
+        alt: 'Cultural Heritage Preservation Poster'
+    },
 ];
 
 let currentPosterIndex = 0;
