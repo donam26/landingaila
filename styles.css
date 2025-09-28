@@ -1,3 +1,13 @@
+/* Font Face Declarations */
+@font-face {
+    font-family: 'DFVN TAN - KINDRED';
+    src: url('fonts/DFVN TAN - KINDRED.otf') format('opentype'),
+         url('fonts/DFVN TAN - KINDRED.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
 /* Reset and base styles */
 * {
     margin: 0;
@@ -63,13 +73,11 @@ body {
 }
 
 .main-title {
-    font-family: 'Playfair Display', serif;
+    font-family: 'DFVN TAN - KINDRED', serif;
     font-size: clamp(3.5rem, 8vw, 6rem); /* Further increased size */
-    font-weight: 900; /* Max weight for high contrast */
-    line-height: 1.1;
+    font-weight: normal; /* Max weight for high contrast */
     margin-bottom: 20px;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Deeper shadow */
-    letter-spacing: 1px; /* Adjusted for style */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5); /* Crisper shadow */
 }
 
 .title-line {
@@ -82,8 +90,7 @@ body {
 }
 
 .highlight {
-    font-family: 'Nunito', 'Arial Rounded MT Bold', 'Helvetica Rounded', sans-serif;
-    font-size: 1.2em;
+    font-size: 1em;
     font-weight: 800;
     text-shadow: 0 0 20px rgba(255, 215, 0, 0.5);
     letter-spacing: 2px;
