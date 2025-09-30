@@ -73,12 +73,13 @@ body {
 }
 
 .main-title {
-    font-family: 'DFVN TAN - KINDRED', serif;
-    font-size: clamp(3.5rem, 8vw, 6rem); /* Further increased size */
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
     font-weight: normal; /* Max weight for high contrast */
     margin-bottom: 20px;
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5); /* Crisper shadow */
-    line-height: 2;
+    font-style: italic;
+
 }
 
 .title-line {
@@ -87,6 +88,10 @@ body {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+}
+
+.title-line:first-child {
+    font-style: italic;
     animation: titleGlow 3s ease-in-out infinite alternate;
 }
 
@@ -500,7 +505,9 @@ body {
 }
 
 .gallery-title {
-    font-family: 'DFVN TAN - KINDRED', serif;
+    font-style: italic;
+    font-size: 38px;
+    font-family: 'Playfair Display', serif;
     font-weight: normal; /* Max weight for high contrast */
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5); /* Crisper shadow */
 }
