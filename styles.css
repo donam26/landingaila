@@ -73,12 +73,14 @@ body {
 }
 
 .main-title {
-    font-family: 'Playfair Display', serif;
-    font-size: 48px;
-    font-weight: normal; /* Max weight for high contrast */
+    font-family: "Dancing Script", "Dancing Script Fallback", cursive;
+    font-weight: 700; /* Adjusted for Dancing Script */
+    line-height: 1.1;
     margin-bottom: 20px;
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5); /* Crisper shadow */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Deeper shadow */
+    letter-spacing: 1px; /* Adjusted for style */
     font-style: italic;
+    font-size: 48px;
 
 }
 
@@ -505,11 +507,15 @@ body {
 }
 
 .gallery-title {
+    font-family: "Dancing Script", "Dancing Script Fallback", cursive;
+    font-weight: 700; /* Adjusted for Dancing Script */
+    line-height: 1.1;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7); /* Deeper shadow */
+    letter-spacing: 1px; /* Adjusted for style */
     font-style: italic;
-    font-size: 38px;
-    font-family: 'Playfair Display', serif;
-    font-weight: normal; /* Max weight for high contrast */
-    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5); /* Crisper shadow */
+    font-size: 48px;
+
 }
 
 .gallery-grid {
