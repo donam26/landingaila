@@ -249,51 +249,7 @@ function initializeParticles() {
 }
 
 function enterMainSite() {
-    // Add exit animation
-    const container = document.querySelector('.container');
-    container.style.transition = 'all 0.8s ease-out';
-    container.style.opacity = '0';
-    container.style.transform = 'scale(0.95)';
-
-    // Show loading message
-    const loadingDiv = document.createElement('div');
-    loadingDiv.innerHTML = `
-        <div style="
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            z-index: 1000;
-            color: #FFD700;
-            font-family: 'Playfair Display', serif;
-            font-size: 1.5rem;
-        ">
-            <div style="margin-bottom: 20px;">Đang chuyển hướng...</div>
-            <div style="
-                width: 50px;
-                height: 50px;
-                border: 3px solid rgba(255, 215, 0, 0.3);
-                border-top: 3px solid #FFD700;
-                border-radius: 50%;
-                animation: spin 1s linear infinite;
-                margin: 0 auto;
-            "></div>
-        </div>
-        <style>
-            @keyframes spin {
-                0% { transform: rotate(0deg); }
-                100% { transform: rotate(360deg); }
-            }
-        </style>
-    `;
-
-    document.body.appendChild(loadingDiv);
-
-    // Simulate navigation to main site
-    setTimeout(() => {
-        window.location.href = 'https://ailao.winhouse.id.vn/';
-    }, 2000);
+    window.location.href = 'https://ailao.winhouse.id.vn/';
 }
 
 // Add some interactive effects
