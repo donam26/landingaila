@@ -292,9 +292,7 @@ function enterMainSite() {
 
     // Simulate navigation to main site
     setTimeout(() => {
-        // Replace with actual navigation
-        alert('Chuyển hướng đến trang chính của website Ải Lao!\n\nThay thế dòng này bằng: window.location.href = "main-site.html";');
-        // window.location.href = 'main-site.html';
+        window.location.href = 'https://ailao.winhouse.id.vn/';
     }, 2000);
 }
 
